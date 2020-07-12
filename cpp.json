@@ -191,4 +191,29 @@
 		],
 		"description": "read_file"
 	},
+	"read_file1":{
+		"prefix": "read_file1",
+		"body":[
+			"std::vector<int> read_file(const std::string filename){",
+			"	std::ifstream fin(filename); // create ifstram to manage read from input file",
+			"	if (!fin.is_open()){",
+			"		std::cerr << 'Could not open ' << filename << std::endl;",
+			"		fin.clear();",
+			"	}",
+			"	std::string line ;",
+			"	std::vector<int> data;"
+				// read file line by line
+			"	while(std::getline(fin, line)){"
+			"		std::stringstream ss(line);"
+			"		std::vector<std::string> inputs;"		
+			"		std::string s; int x; "
+			"		while(ss >> x){"
+			"			data.push_back(x);"
+			"		}"
+			
+			"	}"
+			"	return data;" 
+			"}"
+		]
+	},
   }
